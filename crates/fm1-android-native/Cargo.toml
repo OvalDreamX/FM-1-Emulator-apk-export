@@ -1,0 +1,14 @@
+[package]
+name = "fm1-android-native"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+name = "fm1_android_native"
+crate-type = ["cdylib"]
+
+[dependencies]
+fm1-core = { path = "../fm1-core" }
+fm1-soc = { path = "../fm1-soc" }
+rtrb = "0.3"
