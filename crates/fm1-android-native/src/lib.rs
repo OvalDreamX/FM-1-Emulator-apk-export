@@ -5,7 +5,7 @@
 //! emulator. The Android UI calls this crate through a small C ABI implemented in `ffi.rs`.
 
 
-use fm1_core::Cpu;
+use fm1_core::{Bus, Cpu};
 use fm1_soc::{machine, stock_boot, stock_from_package, Action, Board, Soc, FLASH_SIZE};
 use rtrb::{Consumer, Producer, RingBuffer};
 use std::ffi::c_char;
