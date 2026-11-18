@@ -19,7 +19,7 @@ if (Get-Command rustup -ErrorAction SilentlyContinue) { rustup target add aarch6
 $NdkOutput = Join-Path $Root 'android/app/src/main/jniLibs'
 New-Item -ItemType Directory -Force -Path $NdkOutput | Out-Null
 Write-Host 'Building the native ARM64 emulator…'
-cargo ndk -t arm64-v8a -p 26 -o $NdkOutput build --release -p fm1-android-native
+cargo ndk -t arm64-v8a -P 26 -o $NdkOutput build --release -p fm1-android-native
 if ($LASTEXITCODE -ne 0) { throw 'Rust/Android native build failed.' }
 
 $GradleVersion = '8.13'

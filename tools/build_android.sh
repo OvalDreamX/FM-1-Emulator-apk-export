@@ -10,7 +10,7 @@ command -v cargo-ndk >/dev/null || cargo install cargo-ndk --locked
 rustup target add aarch64-linux-android
 OUT="$ROOT/android/app/src/main/jniLibs"
 mkdir -p "$OUT"
-cargo ndk -t arm64-v8a -p 26 -o "$OUT" build --release -p fm1-android-native
+cargo ndk -t arm64-v8a -P 26 -o "$OUT" build --release -p fm1-android-native
 
 GRADLE_VERSION=8.13
 TOOLS="${XDG_CACHE_HOME:-$HOME/.cache}/fm1-android-build-tools"
