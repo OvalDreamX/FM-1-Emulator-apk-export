@@ -152,8 +152,8 @@ Java_com_fm1emu_android_MainActivity_nativeStartAudio(JNIEnv*, jobject, jlong en
     AAudioStreamBuilder_setSampleRate(builder, 44100);
     AAudioStreamBuilder_setSharingMode(builder, AAUDIO_SHARING_MODE_SHARED);
     AAudioStreamBuilder_setPerformanceMode(builder, AAUDIO_PERFORMANCE_MODE_LOW_LATENCY);
-    AAudioStreamBuilder_setUsage(builder, AAUDIO_USAGE_MEDIA);
-    AAudioStreamBuilder_setContentType(builder, AAUDIO_CONTENT_TYPE_MUSIC);
+    // AAudio defaults to MEDIA usage and MUSIC content type. Keep those defaults:
+    // the explicit setters require Android API 28, while this app supports API 26.
     AAudioStreamBuilder_setDataCallback(builder, onAudioData, output);
 
     result = AAudioStreamBuilder_openStream(builder, &output->stream);
